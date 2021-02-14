@@ -82,7 +82,7 @@
             </div>
             <div class="col-md-12 my-3">
                 <h2 class="text-center">Tüm İş Listesi</h2>
-                <table class="table table-striped table-hover" id="datatable">
+                <table class="table table-striped table-hover datatable_total">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -95,6 +95,141 @@
                     <tbody>
                         @if($data)
                             @foreach($data as $item)
+                            <tr>
+                                <th scope="row">{{ $item->id }}</th>
+                                <td>{{ $item->title }}</td>
+                                <td>{{ $item->level }}</td>
+                                <td>{{ $item->duration }}</td>
+                                <td>{{ $item->created_at }}</td>
+                            </tr>
+                            @endforeach
+                        @endif
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12 my-3">
+                <h2 class="text-center">1.Seviye İş Listesi</h2>
+                <table class="table table-striped table-hover datatable">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Başlık</th>
+                            <th scope="col">Seviye</th>
+                            <th scope="col">Zaman</th>
+                            <th scope="col">Kayıt Tarihi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if($data)
+                            @foreach($todo_list_data[1] as $item)
+                            <tr>
+                                <th scope="row">{{ $item->id }}</th>
+                                <td>{{ $item->title }}</td>
+                                <td>{{ $item->level }}</td>
+                                <td>{{ $item->duration }}</td>
+                                <td>{{ $item->created_at }}</td>
+                            </tr>
+                            @endforeach
+                        @endif
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12 my-3">
+                <h2 class="text-center">2.Seviye İş Listesi</h2>
+                <table class="table table-striped table-hover datatable">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Başlık</th>
+                            <th scope="col">Seviye</th>
+                            <th scope="col">Zaman</th>
+                            <th scope="col">Kayıt Tarihi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if($data)
+                            @foreach($todo_list_data[2] as $item)
+                            <tr>
+                                <th scope="row">{{ $item->id }}</th>
+                                <td>{{ $item->title }}</td>
+                                <td>{{ $item->level }}</td>
+                                <td>{{ $item->duration }}</td>
+                                <td>{{ $item->created_at }}</td>
+                            </tr>
+                            @endforeach
+                        @endif
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12 my-3">
+                <h2 class="text-center">3.Seviye İş Listesi</h2>
+                <table class="table table-striped table-hover datatable">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Başlık</th>
+                            <th scope="col">Seviye</th>
+                            <th scope="col">Zaman</th>
+                            <th scope="col">Kayıt Tarihi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if($data)
+                            @foreach($todo_list_data[3] as $item)
+                            <tr>
+                                <th scope="row">{{ $item->id }}</th>
+                                <td>{{ $item->title }}</td>
+                                <td>{{ $item->level }}</td>
+                                <td>{{ $item->duration }}</td>
+                                <td>{{ $item->created_at }}</td>
+                            </tr>
+                            @endforeach
+                        @endif
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12 my-3">
+                <h2 class="text-center">4.Seviye İş Listesi</h2>
+                <table class="table table-striped table-hover datatable">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Başlık</th>
+                            <th scope="col">Seviye</th>
+                            <th scope="col">Zaman</th>
+                            <th scope="col">Kayıt Tarihi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if($data)
+                            @foreach($todo_list_data[4] as $item)
+                            <tr>
+                                <th scope="row">{{ $item->id }}</th>
+                                <td>{{ $item->title }}</td>
+                                <td>{{ $item->level }}</td>
+                                <td>{{ $item->duration }}</td>
+                                <td>{{ $item->created_at }}</td>
+                            </tr>
+                            @endforeach
+                        @endif
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12 my-3">
+                <h2 class="text-center">5.Seviye İş Listesi</h2>
+                <table class="table table-striped table-hover datatable">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Başlık</th>
+                            <th scope="col">Seviye</th>
+                            <th scope="col">Zaman</th>
+                            <th scope="col">Kayıt Tarihi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if($data)
+                            @foreach($todo_list_data[5] as $item)
                             <tr>
                                 <th scope="row">{{ $item->id }}</th>
                                 <td>{{ $item->title }}</td>
@@ -125,10 +260,17 @@
 
     <script>
     $(document).ready(function() {
-        $('#datatable').DataTable({            
+        $('.datatable_total').DataTable({
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.22/i18n/Turkish.json"
-            }
+            },
+            //order:[3,"asc"]
+        });
+        $('.datatable').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.22/i18n/Turkish.json"
+            },
+            order:[3,"asc"]
         });
     } );
     </script>
